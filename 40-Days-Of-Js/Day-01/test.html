@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro&settingUpEnv</title>
+
+    <!-- External js [Note:It's better than Internal But no work for DOM.] -->
+    <script src="./testHeadSec.js"></script>
+
+    <!-- Better Use -->
+    <script async src="./testAsync.js"></script>
+    <script defer src="./testDefer.js"></script>
+  </head>
+  <body>
+    <h1>40 Days Js Learning!</h1>
+
+    <!-- DOM for External Js from Head sec. [Note: It's occur null Erorr.] -->
+    <div id="testHeadSecDOM"></div>
+    <div id="testEndBodyDOM"></div>
+    <div id="testStartBodyDOM"></div>
+
+    <!-- Internal Js [Note:Not sweet to use at present] -->
+    <script>
+      console.log("Helo from Day-01 of 40 days Js!");
+    </script>
+
+    <!-- External Js from End of body tag. [Note:It works well for DOM but not perfect] -->
+    <script src="./testEndBody.js"></script>
+  </body>
+</html>
