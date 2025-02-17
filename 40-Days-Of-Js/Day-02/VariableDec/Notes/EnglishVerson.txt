@@ -1,0 +1,97 @@
+### **Differences Between `var`, `let`, and `const`**
+
+In JavaScript, `var`, `let`, and `const` are used for declaring variables, but each behaves differently. Here's a detailed explanation of their differences, usage, and examples:
+
+---
+
+## 1. **`var`**  
+`var` is the older keyword used for declaring variables in JavaScript before ES6 (ECMAScript 2015).
+
+### **Features of `var`:**
+- **Function Scope**: A variable declared with `var` is scoped to the **function** in which it is declared, meaning it is not accessible outside that function.
+- **Hoisting**: Variables declared with `var` are hoisted, meaning they are moved to the top of their scope and can be used before declaration.
+- **Re-declaration**: You can re-declare the same variable multiple times in the same scope, which can sometimes lead to bugs.
+
+### **Example of `var`:**
+```javascript
+function example() {
+  var a = 10;
+  if (true) {
+    var a = 20;  // Same 'a' is being re-assigned
+    console.log(a);  // 20
+  }
+  console.log(a);  // 20, because 'a' was re-assigned within the function scope
+}
+
+example();
+```
+
+**Here, the value of `a` is initially 10, but it's re-assigned to 20 within the same scope.**
+
+---
+
+## 2. **`let`**  
+`let` was introduced in ES6 and is preferred over `var` due to its more predictable behavior.
+
+### **Features of `let`:**
+- **Block Scope**: A variable declared with `let` is scoped to the **block** in which it is declared (such as within loops, conditionals, etc.), making it more restrictive and less prone to errors.
+- **No Hoisting**: Variables declared with `let` are not hoisted, meaning you cannot use them before they are declared.
+- **No Re-declaration**: You cannot declare the same variable multiple times within the same block.
+
+### **Example of `let`:**
+```javascript
+function example() {
+  let a = 10;
+  if (true) {
+    let a = 20;  // Different 'a' in the block scope
+    console.log(a);  // 20
+  }
+  console.log(a);  // 10, because the 'a' outside the block remains 10
+}
+
+example();
+```
+
+**Here, the `a` inside the block is different from the one outside it. The `a` in the block is 20, but the one outside is still 10.**
+
+---
+
+## 3. **`const`**  
+`const` was also introduced in ES6 and is used to declare variables that should **not** be reassigned after their initial assignment.
+
+### **Features of `const`:**
+- **Block Scope**: Like `let`, `const` is also block-scoped.
+- **Non-reassignable**: A variable declared with `const` cannot be reassigned. However, if the `const` variable holds an object or an array, you can modify the contents of that object or array, but the reference itself cannot be changed.
+- **Hoisting**: `const` also behaves similarly to `let` in terms of hoisting — it will not be hoisted, and you cannot access it before declaration.
+
+### **Example of `const`:**
+```javascript
+const x = 10;
+x = 20;  // Error: Assignment to constant variable.
+
+const arr = [1, 2, 3];
+arr.push(4);  // This is allowed, because we're modifying the array, not the reference
+console.log(arr);  // [1, 2, 3, 4]
+```
+
+**Here, `x` cannot be reassigned, but you can still modify the contents of the array `arr`.**
+
+---
+
+### **Summary of Differences**
+
+| Feature                   | `var`                             | `let`                           | `const`                           |
+|---------------------------|-----------------------------------|---------------------------------|-----------------------------------|
+| **Scope**                  | Function-scoped                   | Block-scoped                   | Block-scoped                     |
+| **Hoisting**               | Hoisted                           | Not hoisted                    | Not hoisted                      |
+| **Re-declaration**         | Can be re-declared in the same scope | Cannot be re-declared in the same scope | Cannot be re-declared in the same scope |
+| **Re-assignable**          | Re-assignable                     | Re-assignable                  | Not re-assignable (immutable)    |
+
+---
+
+### **When to Use Which?**
+- **`var`**: Although still used in older code, it's recommended to avoid using it in new code. 
+- **`let`**: Use `let` when you want to declare a variable that might change its value.
+- **`const`**: Use `const` when you want to declare a variable whose value should remain constant throughout the program (such as constants or references to objects/arrays).
+
+📌 **By using `let` and `const` over `var`, your code becomes cleaner, more predictable, and less prone to bugs.** 🚀
