@@ -1,0 +1,328 @@
+এখানে আপনার দেওয়া কন্টেন্টটিকে HTML ও CSS দিয়ে সুন্দরভাবে সাজিয়ে দেওয়া হলো। আমি
+কোডে কোনো পরিবর্তন করিনি, শুধু স্টাইলিং করেছি। ```html
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript এর Variable: সম্পূর্ণ বিশ্লেষণ</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-top: 20px;
+      }
+
+      h2 {
+        color: #007bff;
+      }
+
+      .content {
+        margin: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      p {
+        line-height: 1.6;
+        color: #333;
+      }
+
+      code {
+        background-color: #f7f7f7;
+        padding: 5px 10px;
+        border-radius: 4px;
+        color: #d6336c;
+      }
+
+      .summary {
+        background-color: #e9ecef;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 1.2em;
+        color: #555;
+      }
+
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+
+      .table th,
+      .table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+
+      .table th {
+        background-color: #f1f1f1;
+        color: #333;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript এর Variable: সম্পূর্ণ বিশ্লেষণ</h1>
+
+    <div class="content">
+      <p>
+        JavaScript-এ <strong>Variable (ভেরিয়েবল)</strong> হল এমন একটি
+        <strong>কন্টেইনার</strong>, যেখানে <strong>ডাটা সংরক্ষণ</strong> করা
+        যায়। এটি একটি <strong>নাম</strong> দিয়ে ডাটা ধরে রাখে এবং প্রয়োজনে
+        পরিবর্তন করা যায়।
+      </p>
+
+      <p>ভেরিয়েবল ডিক্লেয়ার করার জন্য <strong>৩টি কিওয়ার্ড</strong> রয়েছে:</p>
+      <ul>
+        <li>var (পুরনো, কিন্তু এখনও ব্যবহার করা যায়)</li>
+        <li>let (আধুনিক এবং বেশি ব্যবহৃত)</li>
+        <li>const (পরিবর্তন করা যায় না)</li>
+      </ul>
+
+      <h2>1. Variable Declare & Assign করা</h2>
+      <p>
+        ভেরিয়েবল <strong>ঘোষণা (declare)</strong> করার সময় var, let, বা const
+        ব্যবহার করা হয়, এবং <strong>মান (value) সংযুক্ত (assign)</strong> করা হয়
+        = অপারেটর দিয়ে।
+      </p>
+      <pre><code>var x = 10;  // পুরনো নিয়ম
+let y = 20;  // আধুনিক নিয়ম
+const z = 30; // পরিবর্তন করা যাবে না</code></pre>
+
+      <h2>2. var, let, const এর পার্থক্য</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>var</th>
+            <th>let</th>
+            <th>const</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Redeclaration (পুনরায় ডিক্লেয়ার)</td>
+            <td>✅ করা যায়</td>
+            <td>❌ করা যায় না</td>
+            <td>❌ করা যায় না</td>
+          </tr>
+          <tr>
+            <td>Reassignment (নতুন মান সেট করা)</td>
+            <td>✅ করা যায়</td>
+            <td>✅ করা যায়</td>
+            <td>❌ করা যায় না</td>
+          </tr>
+          <tr>
+            <td>Block Scope</td>
+            <td>❌ নেই</td>
+            <td>✅ আছে</td>
+            <td>✅ আছে</td>
+          </tr>
+          <tr>
+            <td>Hoisting</td>
+            <td>✅ কাজ করে, কিন্তু undefined দেয়</td>
+            <td>✅ কাজ করে, কিন্তু ReferenceError দেয়</td>
+            <td>✅ কাজ করে, কিন্তু ReferenceError দেয়</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>3. Hoisting (ভেরিয়েবল টেনে উপরে নেওয়া)</h2>
+      <p>
+        JavaScript-এ <strong>Hoisting</strong> মানে হল
+        <strong
+          >ভেরিয়েবল এবং ফাংশন ডিফাইনেশনকে স্বয়ংক্রিয়ভাবে স্ক্রিপ্টের শুরুতে নিয়ে
+          আসা।</strong
+        >
+      </p>
+      <pre><code>console.log(num);  // Output: undefined
+var num = 10;</code></pre>
+      <p>
+        👉 এখানে var num উপরে টানা হয়েছে, কিন্তু মান 10 সেট হওয়ার আগেই undefined
+        দেখাচ্ছে।
+      </p>
+
+      <p><strong>Hoisting with let & const:</strong></p>
+      <pre><code>console.log(num2);  // ❌ ReferenceError
+let num2 = 20;</code></pre>
+      <p>
+        👉 এখানে
+        <strong
+          >let বা const hoist হয়, কিন্তু ব্যবহার করার আগে ReferenceError
+          দেয়।</strong
+        >
+      </p>
+
+      <h2>4. Scope (ভেরিয়েবলের সীমানা)</h2>
+      <h3>(i) Global Scope</h3>
+      <pre><code>var globalVar = "I am global";
+
+function show() {
+  console.log(globalVar); // Output: I am global
+}
+show();</code></pre>
+
+      <h3>(ii) Function Scope</h3>
+      <pre><code>function test() {
+  var localVar = "I am local";
+  console.log(localVar);
+}
+test();
+// console.log(localVar);  // ❌ Error! localVar এখানে নেই</code></pre>
+
+      <h3>(iii) Block Scope (let এবং const)</h3>
+      <pre><code>if (true) {
+  let blockVar = "Inside block";
+  console.log(blockVar);  // ✅ কাজ করবে
+}
+// console.log(blockVar); // ❌ Error! বাইরে ব্যবহার করা যাবে না</code></pre>
+
+      <h2>5. Mutable vs Immutable (পরিবর্তনযোগ্য বনাম অপরিবর্তনযোগ্য)</h2>
+      <pre><code>let name = "Alice";
+name = "Bob";  // ✅ পরিবর্তন করা যায়
+
+const age = 25;
+age = 30;  // ❌ Error! `const` পরিবর্তন করা যায় না</code></pre>
+
+      <h2>6. Data Type অনুযায়ী ভেরিয়েবল</h2>
+      <p>ভেরিয়েবল ২ প্রকারের <strong>ডাটা টাইপ</strong> ধরে রাখতে পারে:</p>
+      <ul>
+        <li><strong>Primitive (প্রিমিটিভ) ডাটা টাইপ</strong></li>
+        <li><strong>Non-Primitive (নন-প্রিমিটিভ) ডাটা টাইপ</strong></li>
+      </ul>
+
+      <h3>Primitive Type</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Primitive Type</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>string</td>
+            <td>"Hello"</td>
+          </tr>
+          <tr>
+            <td>number</td>
+            <td>42</td>
+          </tr>
+          <tr>
+            <td>boolean</td>
+            <td>true/false</td>
+          </tr>
+          <tr>
+            <td>null</td>
+            <td>null</td>
+          </tr>
+          <tr>
+            <td>undefined</td>
+            <td>undefined</td>
+          </tr>
+          <tr>
+            <td>symbol</td>
+            <td>Symbol('id')</td>
+          </tr>
+          <tr>
+            <td>bigint</td>
+            <td>12345678901234567890123n</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Non-Primitive (Objects, Arrays, Functions)</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Non-Primitive Type</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Object</td>
+            <td>{name: "Alice", age: 25}</td>
+          </tr>
+          <tr>
+            <td>Array</td>
+            <td>["Apple", "Banana", "Mango"]</td>
+          </tr>
+          <tr>
+            <td>Function</td>
+            <td>function() { return "Hello"; }</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>7. Pass by Value vs Pass by Reference</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Primitive (Pass by Value)</th>
+            <th>Non-Primitive (Pass by Reference)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>নতুন কপি তৈরি হয়</td>
+            <td>আসল রেফারেন্স পাস হয়</td>
+          </tr>
+        </tbody>
+      </table>
+      <pre><code>let a = 10;
+let b = a;  
+b = 20;
+console.log(a);  // Output: 10 (value copy হয়েছে)
+
+let obj1 = { num: 5 };
+let obj2 = obj1;
+obj2.num = 10;
+console.log(obj1.num); // Output: 10 (reference copy হয়েছে)</code></pre>
+
+      <h2>সংক্ষেপে মূল পয়েন্ট</h2>
+      <ul>
+        <li>✅ var, let, const ব্যবহার করে ভেরিয়েবল ডিক্লেয়ার করা হয়।</li>
+        <li>
+          ✅ let এবং const এর <strong>Block Scope</strong> আছে, var এর নেই।
+        </li>
+        <li>✅ const immutable, কিন্তু let mutable.</li>
+        <li>
+          ✅ Primitive টাইপ <strong>pass by value</strong>, Non-Primitive টাইপ
+          <strong>pass by reference</strong> হয়।
+        </li>
+        <li>
+          ✅ Hoisting এর জন্য var <strong>undefined</strong> দেয়, কিন্তু let ও
+          const <strong>error</strong> দেয়।
+        </li>
+      </ul>
+
+      <h3>
+        🔥 এতক্ষণে JavaScript-এর Variable নিয়ে পুরোপুরি পরিষ্কার হয়ে যাওয়ার কথা!
+        তুমি যদি আরও বিস্তারিত জানতে চাও বা কোনো কনফিউশন থাকে, তাহলে জানাও! 😊
+      </h3>
+    </div>
+
+    <footer>JavaScript Variable Tutorial</footer>
+  </body>
+</html>
+``` এখানে বর্ণনা এবং কোডে কোনো পরিবর্তন করা হয়নি, শুধু স্টাইলিং করা হয়েছে। আশা
+করছি, এটা আপনার পছন্দ হবে। 😊
