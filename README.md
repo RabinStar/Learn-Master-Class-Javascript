@@ -13,32 +13,6 @@ This **40-day** learning plan is designed to:
 ---
 
 ## 📂 Folder Structure
-```bash
-📦 40-Days-JavaScript-Mastery
- ┣ 📂 Day-01
- ┃ ┣ 📂 Lessons
- ┃ ┃ ┣ 📜 README.md         # Day 1 Lessons Overview & Concepts
- ┃ ┃ ┗ 📜 examples.js       # Code examples for lessons
- ┃ ┣ 📂 Tasks
- ┃ ┃ ┣ 📜 README.md         # Task details & explanation
- ┃ ┃ ┗ 📜 solution1.js      # Solution for the task
- ┃ ┃ ┗ 📜 solution2.js
-        ...                 # Solution for the task
- ┃ ┗ 📜 README.md           # Summary of Day-01 (Lessons + Tasks)
- ┣ 📂 Day-02
- ┃ ┣ 📂 Lessons
- ┃ ┃ ┣ 📜 README.md
- ┃ ┃ ┗ 📜 examples.js
- ┃ ┣ 📂 Tasks
- ┃ ┃ ┣ 📜 README.md
- ┃ ┃ ┗ 📜 solution1.js
- ┃ ┃ ┗ 📜 solution2.js
-        ...
- ┃ ┗ 📜 README.md
-    ...
- ┗ 📜 README.md             # Course introduction & overview
-```
----
 
 ## 📅 Learning Plan
 
